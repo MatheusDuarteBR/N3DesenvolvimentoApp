@@ -4,13 +4,9 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Atualização (18/11/21)
+***
+Nosso Aplicativo, será um aplicativo de cryptomoedas, vai ter um sistema de login integrado com o firebase na primeira tela. Na segunda tela terá todas as primeiras 50 moedas do mercado consumindo uma API da coinmarketcap mostrando seu valor de mercado em dólar, símbolo, uma imagem da moeda e também a variação dela nas últimas 24h. Vai ter um botão ali de conversão, ali o usuário poderá converter a moeda desejada para outra, outro botão que vai ter também será um de notícias, mostrando as últimas notícias do mercado de cryptmoedas.
+E por mim terá um sistema de "moeda preferida" o usuário poderá selecionar algumas moedas que mais goste para deixar no topo da tela.
+***
+Atualização (00/00/21)
