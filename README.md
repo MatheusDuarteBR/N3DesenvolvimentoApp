@@ -1,4 +1,4 @@
-# cryptobas
+# Matheus Duarte & Khaue Souza
 
 A new Flutter project.
 
