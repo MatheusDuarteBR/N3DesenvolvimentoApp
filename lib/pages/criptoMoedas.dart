@@ -4,6 +4,8 @@ import 'package:cryptobas/pages/coinCard.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../pages/coinModel.dart';
+import 'package:cryptobas/screens/conversao.dart';
+import 'package:cryptobas/screens/noticias.dart';
 
 
 class CriptoMoeda extends StatefulWidget {
@@ -12,8 +14,8 @@ class CriptoMoeda extends StatefulWidget {
 }
 
 class _CriptoMoedaState extends State<CriptoMoeda> {
-  int currentIndex = 0;
 
+  int _selectedIndex = 0;
   Future<List<Coin>> fetchCoin() async {
     coinList = [];
     final response = await http.get(Uri.parse(
@@ -46,6 +48,12 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
     super.initState();
   }
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,24 +70,24 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
           ),
         ),
 
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (index) => currentIndex = index,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.filter_1),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.filter_2),
-              label: "News",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.filter_3),
-              label: "Conversion",
-            ),
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.camera),
+            label: 'Conversao',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'Noticias',
+          ),
+        ],
+      ),
 
         body: ListView.builder(
           scrollDirection: Axis.vertical,
