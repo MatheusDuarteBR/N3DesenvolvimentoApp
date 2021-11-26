@@ -143,5 +143,6 @@ class CoinCard extends StatelessWidget {
         ),
       ),
     );
+
   }
 }

@@ -40,4 +40,5 @@ class _LoadingState extends State<Loading> {
           size: 80.0,
         )));
   }
+
 }

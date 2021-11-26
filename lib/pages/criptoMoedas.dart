@@ -4,14 +4,21 @@ import 'package:cryptobas/pages/coinCard.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../pages/coinModel.dart';
-
+import 'package:cryptobas/screens/conversao.dart';
+import 'package:cryptobas/screens/noticias.dart';
 
 class CriptoMoeda extends StatefulWidget {
   @override
   _CriptoMoedaState createState() => _CriptoMoedaState();
+
 }
 
 class _CriptoMoedaState extends State<CriptoMoeda> {
+  final List<Widget> _telas = [
+    Conversao(),
+    Noticias(),
+  ];
+
   Future<List<Coin>> fetchCoin() async {
     coinList = [];
     final response = await http.get(Uri.parse(
@@ -47,19 +54,33 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300],
         appBar: AppBar(
           backgroundColor: Colors.grey[300],
           title: Text(
             'CRIPTOMOEDAS',
             style: TextStyle(
-              color: Colors.grey[900],
+              color: Colors.yellow[900],
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
-        body: ListView.builder(
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.filter_1),
+              label: "bt'",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.filter_2),
+              label: "bt2",
+            ),
+          ],
+        ),
+
+        body:
+        ListView.builder(
           scrollDirection: Axis.vertical,
           itemCount: coinList.length,
           itemBuilder: (context, index) {
@@ -70,6 +91,7 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
               price: coinList[index].price.toDouble(),
               change: coinList[index].change.toDouble(),
               changePercentage: coinList[index].changePercentage.toDouble(),
+
             );
           },
         ));

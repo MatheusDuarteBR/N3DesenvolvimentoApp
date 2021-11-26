@@ -13,7 +13,6 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +25,6 @@ class _HomeState extends State<Home> {
               'CRIPTOMOEDAS',
               style: TextStyle(
                 fontSize: 26.0,
-                fontFamily: 'Righteous',
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -37,6 +35,7 @@ class _HomeState extends State<Home> {
           )
         ),
       ),
+
     );
   }
 }
