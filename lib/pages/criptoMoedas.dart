@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import '../pages/coinModel.dart';
 import 'package:cryptobas/screens/conversao.dart';
 import 'package:cryptobas/screens/noticias.dart';
+import 'package:cryptobas/screens/home.dart';
 
 
 class CriptoMoeda extends StatefulWidget {
@@ -16,6 +17,13 @@ class CriptoMoeda extends StatefulWidget {
 class _CriptoMoedaState extends State<CriptoMoeda> {
 
   int _selectedIndex = 0;
+
+  final screens = [
+    Home(),
+    Conversao(),
+    Noticias(),
+  ];
+
   Future<List<Coin>> fetchCoin() async {
     coinList = [];
     final response = await http.get(Uri.parse(
@@ -70,25 +78,24 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
           ),
         ),
 
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.call),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.camera),
-            label: 'Conversao',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Noticias',
-          ),
-        ],
-      ),
-
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.call),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.camera),
+              label: 'conversao',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.chat),
+              label: 'noticias',
+            ),
+          ],
+        ),
         body: ListView.builder(
           scrollDirection: Axis.vertical,
           itemCount: coinList.length,
@@ -101,7 +108,7 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
               change: coinList[index].change.toDouble(),
               changePercentage: coinList[index].changePercentage.toDouble(),
             );
-          },
-        ));
+          },)
+    );
   }
 }
