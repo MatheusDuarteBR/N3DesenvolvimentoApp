@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import '../pages/coinModel.dart';
 import 'package:cryptobas/screens/conversao.dart';
 import 'package:cryptobas/screens/noticias.dart';
-import 'package:cryptobas/screens/home.dart';
+
 
 
 class CriptoMoeda extends StatefulWidget {
@@ -17,9 +17,9 @@ class CriptoMoeda extends StatefulWidget {
 class _CriptoMoedaState extends State<CriptoMoeda> {
 
   int _selectedIndex = 0;
+  Widget _bodyWidget = CriptoBody();
 
   final screens = [
-    Home(),
     Conversao(),
     Noticias(),
   ];
@@ -56,11 +56,6 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
     super.initState();
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +66,7 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
           title: Text(
             'CRIPTOMOEDAS',
             style: TextStyle(
-              color: Colors.grey[900],
+              color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -80,7 +75,8 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
 
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.grey,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.call),
@@ -95,20 +91,48 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
               label: 'noticias',
             ),
           ],
+          onTap: (index){
+            setState(() {
+              _selectedIndex = index;
+              switch (index){
+                case 0:
+                  _bodyWidget = CriptoBody();
+                  break;
+                case 1:
+                  _bodyWidget = Conversao();
+                  break;
+                case 2:
+                  _bodyWidget = Noticias();
+                  break;
+              }
+            });
+          },
         ),
-        body: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: coinList.length,
-          itemBuilder: (context, index) {
-            return CoinCard(
-              name: coinList[index].name,
-              symbol: coinList[index].symbol,
-              imageUrl: coinList[index].imageUrl,
-              price: coinList[index].price.toDouble(),
-              change: coinList[index].change.toDouble(),
-              changePercentage: coinList[index].changePercentage.toDouble(),
-            );
-          },)
+        body: _bodyWidget
     );
+  }
+}
+
+class CriptoBody extends StatelessWidget {
+  const CriptoBody({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.vertical,
+      itemCount: coinList.length,
+
+      itemBuilder: (context, index) {
+        return CoinCard(
+          name: coinList[index].name,
+          symbol: coinList[index].symbol,
+          imageUrl: coinList[index].imageUrl,
+          price: coinList[index].price.toDouble(),
+          change: coinList[index].change.toDouble(),
+          changePercentage: coinList[index].changePercentage.toDouble(),
+        );
+      },);
   }
 }
