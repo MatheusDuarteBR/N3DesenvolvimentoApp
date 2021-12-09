@@ -7,13 +7,6 @@ class Conversao extends StatefulWidget {
   _ConversaoState createState() => _ConversaoState();
 }
 
-  String name;
-  String symbol;
-  String imageUrl;
-  double price;
-  double change;
-  double changePercentage;
-
 class _ConversaoState extends State<Conversao> {
 @override
   Widget build(BuildContext context) {
@@ -236,11 +229,6 @@ class _ConversaoState extends State<Conversao> {
         ),
       ),
     );
-
-
-
-
-
 
   }
 }
