@@ -4,7 +4,7 @@ import 'package:cryptobas/pages/coinCard.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../pages/coinModel.dart';
-import 'package:cryptobas/screens/conversao.dart';
+import 'package:cryptobas/screens/equipe.dart';
 import 'package:cryptobas/screens/noticias.dart';
 
 
@@ -76,19 +76,19 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.grey[400],
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.call),
-              label: 'Home',
+              icon: Icon(Icons.home),
+              label: 'INICIO',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.camera),
-              label: 'conversao',
+              icon: Icon(Icons.account_box_sharp),
+              label: 'EQUIPE',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.chat),
-              label: 'noticias',
+              label: 'NOTICIAS',
             ),
           ],
           onTap: (index){
@@ -108,7 +108,7 @@ class _CriptoMoedaState extends State<CriptoMoeda> {
             });
           },
         ),
-        body: _bodyWidget
+        body: _bodyWidget,
     );
   }
 }
@@ -133,6 +133,6 @@ class CriptoBody extends StatelessWidget {
           change: coinList[index].change.toDouble(),
           changePercentage: coinList[index].changePercentage.toDouble(),
         );
-      },);
+        },);
   }
 }
