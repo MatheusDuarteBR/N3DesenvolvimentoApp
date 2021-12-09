@@ -133,6 +133,7 @@ class CriptoBody extends StatelessWidget {
           change: coinList[index].change.toDouble(),
           changePercentage: coinList[index].changePercentage.toDouble(),
         );
-        },);
+        },
+    );
   }
 }

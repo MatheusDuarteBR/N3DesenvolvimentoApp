@@ -12,7 +12,7 @@ class _ConversaoState extends State<Conversao> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.orange[300],
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -36,10 +36,10 @@ class _ConversaoState extends State<Conversao> {
                   fontFamily: 'Pacifico',
                 ),
               ),
-              Text('Estudante da Católica',
+              Text('Estagiário TI Pollux',
                 style: TextStyle(
                   fontSize: 20.0,
-                  color: Colors.teal[100],
+                  color: Colors.deepOrange,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Sun flower',
                   letterSpacing: 2.5,
@@ -57,12 +57,12 @@ class _ConversaoState extends State<Conversao> {
                 child: ListTile(
                   leading: Icon(
                     Icons.phone,
-                    color: Colors.teal,
+                    color: Colors.black,
                   ),
                   title: Text(
                     '+55 47 99233-3239',
                     style: TextStyle(
-                      color: Colors.green[900],
+                      color: Colors.black,
                       fontFamily: 'Sun flower',
                       fontSize: 20.0,
                     ),
@@ -74,12 +74,12 @@ class _ConversaoState extends State<Conversao> {
                 child: ListTile(
                   leading: Icon(
                     Icons.email,
-                    color: Colors.teal,
+                    color: Colors.black,
                   ),
                   title: Text(
                     'myduarte1@Hotmail.com',
                     style: TextStyle(
-                      color: Colors.green[900],
+                      color: Colors.black,
                       fontFamily: 'Sun flower',
                       fontSize: 20.0,
                     ),
@@ -90,7 +90,7 @@ class _ConversaoState extends State<Conversao> {
                 height: 65.0,
                 width: 300.0,
                 child: Divider(
-                  color: Colors.teal[100],
+                  color: Colors.black,
                 ),
               ),
               CircleAvatar(
@@ -108,7 +108,7 @@ class _ConversaoState extends State<Conversao> {
               Text('Estudante da Católica ',
                 style: TextStyle(
                   fontSize: 20.0,
-                  color: Colors.teal[100],
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Sun flower',
                   letterSpacing: 2.5,
@@ -118,7 +118,7 @@ class _ConversaoState extends State<Conversao> {
                 height: 55.0,
                 width: 200.0,
                 child: Divider(
-                  color: Colors.teal[100],
+                  color: Colors.black,
                 ),
               ),
               Card(
@@ -126,12 +126,12 @@ class _ConversaoState extends State<Conversao> {
                 child: ListTile(
                   leading: Icon(
                     Icons.phone,
-                    color: Colors.teal,
+                    color: Colors.black,
                   ),
                   title: Text(
                     '+55 47 9993-9357',
                     style: TextStyle(
-                      color: Colors.green[900],
+                      color: Colors.black,
                       fontFamily: 'Sun flower',
                       fontSize: 20.0,
                     ),
@@ -143,12 +143,12 @@ class _ConversaoState extends State<Conversao> {
                 child: ListTile(
                   leading: Icon(
                     Icons.email,
-                    color: Colors.teal,
+                    color: Colors.black,
                   ),
                   title: Text(
                     'khauesouza@gmail.com',
                     style: TextStyle(
-                      color: Colors.green[900],
+                      color: Colors.black,
                       fontFamily: 'Sun flower',
                       fontSize: 20.0,
                     ),
@@ -177,7 +177,7 @@ class _ConversaoState extends State<Conversao> {
               Text('Desenvolvedor Fullstack',
                 style: TextStyle(
                   fontSize: 20.0,
-                  color: Colors.teal[100],
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Sun flower',
                   letterSpacing: 2.5,
@@ -195,12 +195,12 @@ class _ConversaoState extends State<Conversao> {
                 child: ListTile(
                   leading: Icon(
                     Icons.phone,
-                    color: Colors.teal,
+                    color: Colors.black,
                   ),
                   title: Text(
                     '+55 47 99121-2462',
                     style: TextStyle(
-                      color: Colors.green[900],
+                      color: Colors.black,
                       fontFamily: 'Sun flower',
                       fontSize: 20.0,
                     ),
@@ -212,12 +212,12 @@ class _ConversaoState extends State<Conversao> {
                 child: ListTile(
                   leading: Icon(
                     Icons.email,
-                    color: Colors.teal,
+                    color: Colors.black,
                   ),
                   title: Text(
                     'leorohrbacher@gmail.com',
                     style: TextStyle(
-                      color: Colors.green[900],
+                      color: Colors.black,
                       fontFamily: 'Sun flower',
                       fontSize: 20.0,
                     ),

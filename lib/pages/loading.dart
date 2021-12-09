@@ -38,7 +38,8 @@ class _LoadingState extends State<Loading> {
             child: SpinKitFadingCircle(
           color: Colors.white,
           size: 80.0,
-        )));
+        ))
+    );
   }
 
 }
