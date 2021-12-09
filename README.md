@@ -1,4 +1,4 @@
-# Matheus Duarte & Khaue Souza
+# Matheus Duarte, Khaue Souza & Leonardo Silva
 
 A new Flutter project.
 
