@@ -19,3 +19,4 @@ Atualização (08/12/21)
 ***
 Implementação da tela "Equipe" com um "card" dos integrantes da equipe que fizeram o aplicativo. 
 ***
+![alt text](https://github.com/DuarteexPvP/N3DesenvolvimentoApp/gitImage/screen1.png)
