@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class Coin {
   Coin({
-    @required this.name,
-    @required this.symbol,
-    @required this.imageUrl,
-    @required this.price,
-    @required this.change,
-    @required this.changePercentage,
+    required this.name,
+    required this.symbol,
+    required this.imageUrl,
+    required this.price,
+    required this.change,
+    required this.changePercentage,
   });
 
   String name;

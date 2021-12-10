@@ -7,6 +7,8 @@ import 'package:cryptobas/screens/noticias.dart';
 
 void main() => runApp(MaterialApp(
 
+    home: Home(),
+
     initialRoute: '/home',
     routes: {
 
