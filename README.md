@@ -1,6 +1,6 @@
-# Matheus Duarte, Khaue Souza & Leonardo Silva
+# N3 de Desenvolvimento Mobile.
 
-N3 de Desenvolvimento Mobile. ;)
+Grupo: Matheus Duarte, Khaue Souza & Leonardo Silva
 
 ## Getting Started
 
